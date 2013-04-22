@@ -37,5 +37,6 @@ And it's not over yet.
 Still here.'''
 ```
 原始字符串不会将`\`作为特殊字符处理，例如：
-``print r`C:\nowhere` ``输出`C:\nowhere`  
-Unicode字符串存储为16位Unicode，表示方法为``u`Hello, world!` ``。
+`print r'C:\nowhere'`输出`C:\nowhere`  
+  
+Unicode字符串存储为16位Unicode，表示方法为`u'Hello, world!'`。
