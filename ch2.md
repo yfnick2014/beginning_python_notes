@@ -380,7 +380,7 @@ ValueError: list.index(x): x not in list
 >>> x
 [2]
 ```
-> `pop`方法是list方法中唯一一个既修改列表又返回值的方法。
+> `pop`方法是list方法中唯一一个既修改列表又返回值的方法。  
 > 利用`pop`和`append`方法可以实现栈操作，而利用`pop`和`insert`方法可以实现队列操作。  
 
 - **remove**  
@@ -452,3 +452,32 @@ ValueError: list.remove(x): x not in list
 ```
 - **高级排序**  
 
+所谓高级排序，就是可以按照你指定的排序方式来对列表进行排序。  
+你可以自定义排序函数，按照`compare(x, y)`的格式，当`x < y`时返回负数，当`x > y`时返回正数，当`x == y`是返回0.接下来，你便可以将函数名作为参数提供给`sort`方法。  
+内建的`cmp`函数支持默认的行为。
+```python
+>>> cmp(42, 32)
+1
+>>> cmp(99, 100)
+-1
+>>> cmp(10, 10)
+0
+>>> numbers = [5, 2, 9, 7]
+>>> numbers.sort(cmp)
+>>> numbers
+[2, 5, 7, 9]
+```
+`sort`方法有两个额外的参数：`key`和`reverse`，正常你可以通过名称来指定它们。
+```python
+>>> x = ['aardvark', 'abalone', 'acme', 'add', 'aerate']
+>>> x.sort(key=len)
+>>> x
+['add', 'acme', 'aerate', 'abalone', 'aardvark']
+```
+另外一个关键字参数`reverse`只是一个真值（True或False），用来表示列表是否以逆序排序。
+```python
+>>> x = [4, 6, 2, 1, 7, 9]
+>>> x.sort(reverse=True)
+>>> x
+[9, 7, 6, 4, 2, 1]
+```
