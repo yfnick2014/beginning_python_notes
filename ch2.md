@@ -15,8 +15,7 @@ Python有6种内建的序列类型。除了本章要讲到的列表(Lists)和元
 ```
 序列基本操作
 -----------
-- **索引**  
-
+###索引###
 序列中所有的元素从0开始编号，可以用数字索引来访问单个元素，如:  
 ```python
 >>> greeting = 'Hello'  
@@ -73,8 +72,7 @@ Day (1-31): 16
 August 16th, 1974
 ```
 
-- **分片**  
-
+###分片###
 分片可以提取序列中的部分元素。最简单的方法可以通过给定两个索引，并用`:`分隔开。
 ```python
 >>> tag = '<a href="http://www.python.org">Python web site</a>'
@@ -129,8 +127,7 @@ Domain name: python
 >>> numbers[::-2]
 [10, 8, 6, 4, 2]
 ```
-- **添加**  
-
+###添加###
 相同类型的序列可以用`+`来实现序列的串联
 ```python
 >>> [1, 2, 3] + [4, 5, 6]
@@ -143,8 +140,7 @@ File "<pyshell#2>", line 1, in ?
 [1, 2, 3] + 'world!'
 TypeError: can only concatenate list (not "string") to list
 ```
-- **乘**  
-
+###乘###
 序列与一个数x相乘，会创建该序列重复x次的新序列。
 ```python
 >>> 'python' * 5
@@ -159,7 +155,7 @@ TypeError: can only concatenate list (not "string") to list
 >>> sequence
 [None, None, None, None, None, None, None, None, None, None]
 ```
-**Demo: 在处于中心的盒子中打印句子**  
+*Demo: 在处于中心的盒子中打印句子*  
 
 ```python
 # Print a sentence in a centered "box" of correct Width
@@ -192,8 +188,7 @@ Sentence: He's a very naughty boy!
                          |                            |
                          +----------------------------+
 ```
-- **检查成员**  
-
+###检查成员###
 检查元素是否在序列中，使用`in`布尔操作符。`in`操作符返回布尔值：`True`为真，`False`为假。
 ```python
 >>> permissions = 'rw'
@@ -225,9 +220,8 @@ pin = raw_input('PIN code: ')
 
 if [username, pin] in database: print 'Access granted'
 ```
-- **此外，python还支持内建函数如返回序列长度和查找最大或最小元素。**  
-
-对应的函数为`len`、`max`和`min`。
+###其他###
+此外，python还支持内建函数如返回序列长度和查找最大或最小元素。对应的函数分别为`len`、`max`和`min`。
 ```python
 >>> numbers = [100, 34, 678]
 >>> len(numbers)
@@ -243,3 +237,13 @@ if [username, pin] in database: print 'Access granted'
 ```
 列表：Python的主力
 ------------------
+###`list`函数###
+因为字符串不像列表可以修改，有时可以采用`list`函数从字符串创建一个列表。
+```python
+>>> list('Hello')
+['H', 'e', 'l', 'l', 'o']
+```
+> *注意`list`可以处理所有种类的序列，不仅仅只是字符串。*
+>
+> 转换字符列表为字符串，可以使用下面这个表达式：
+> ''.join(somelist)
