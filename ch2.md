@@ -192,5 +192,54 @@ Sentence: He's a very naughty boy!
                          |                            |
                          +----------------------------+
 ```
-- **检查成员**
-- 此外，python还支持内建函数如返回序列长度和查找最大或最小元素。
+- **检查成员**  
+
+检查元素是否在序列中，使用`in`布尔操作符。`in`操作符返回布尔值：`True`为真，`False`为假。
+```python
+>>> permissions = 'rw'
+>>> 'w' in permissions
+True
+>>> 'x' in permissions
+False
+>>> users = ['mlh', 'foo', 'bar']
+>>> raw_input('Enter your user name: ') in users
+Enter your user name: mlh
+True
+>>> subject = '$$$ Get rich now!!!$$$'
+>>> '$$$' in subject
+True
+```
+**Demo: 检查用户名和PIN码**
+```python
+# Check a user name and PIN code
+
+database = [
+    ['albert', '1234'],
+    ['dilbert', '4242'],
+    ['smith', '7524'],
+    ['jones', '9843']
+]
+
+username = raw_input('User name: ')
+pin = raw_input('PIN code: ')
+
+if [username, pin] in database: print 'Access granted'
+```
+- **此外，python还支持内建函数如返回序列长度和查找最大或最小元素。**  
+
+对应的函数为`len`、`max`和`min`。
+```python
+>>> numbers = [100, 34, 678]
+>>> len(numbers)
+3
+>>> max(numbers)
+678
+>>> min(numbers)
+34
+>>> max(2, 3)
+3
+>>> min(9, 3, 2, 5)
+2
+```
+列表：Python的主力
+------------------
