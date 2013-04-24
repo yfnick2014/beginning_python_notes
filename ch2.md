@@ -299,3 +299,156 @@ if [username, pin] in database: print 'Access granted'
 >>> nubmers
 [1, 5]
 ```
+####列表方法####
+这里涉及一个新的概念：方法。如果学习过面向对象编程，你会明白方法和函数是不同的概念。
+列表包含一些方法，可以用来检验或修改列表内容。
+- **append**  
+
+`append`方法用来追加一个对象到列表末尾。
+```python
+>>> lst = [1, 2, 3]
+>>> lst.append(4)
+>>> lst
+[1, 2, 3, 4]
+```
+- **count**  
+
+`count`方法计算元素在列表中的个数。
+```python
+>>> ['to', 'be', 'or', 'not', 'to', 'be'].count('to')
+2
+>>> x = [[1, 2], 1, 1, [2, 1, [1, 2]]]
+>>> x.count(1)
+2
+>>> x.count([1, 2])
+1
+```
+- **extend**  
+
+`extend`方法用来一次追加多个值，即一个序列。
+```python
+>>> a = [1, 2, 3]
+>>> b = [4, 5, 6]
+>>> a.extend(b)
+>>> a
+[1, 2, 3, 4, 5, 6]
+```
+和加法操作不同的是，加法操作不修改序列的值，而是返回一个新的序列。
+```python
+>>> a = [1, 2, 3]
+>>> b = [4, 5, 6]
+>>> a + b
+[1, 2, 3, 4, 5, 6]
+>>> a
+[1, 2, 3]
+# 下面才和extend方法类似，不同的是extend方法修改原来的序列而不是重新赋值
+>>> a = a + b
+```
+- **index**  
+
+`index`方法用来搜索列表中元素第一次出现的索引。
+```python
+>>> knights = ['We', 'are', 'the', 'knights', 'who', 'say', 'ni']
+>>> knights.index('who')
+4
+>>> knights.index('herring')
+Traceback (innermost last):
+File "<pyshell#76>", line 1, in ?
+knights.index('herring')
+ValueError: list.index(x): x not in list
+```
+- **insert**  
+
+`insert`方法用来向列表插入对象。
+```python
+>>> numbers = [1, 2, 3, 5, 6, 7]
+>>> numbers.insert(3, 'four')
+>>> numbers
+[1, 2, 3, 'four', 5, 6, 7]
+```
+- **pop**  
+
+`pop`方法从列表中删除一个元素（默认最后一个），并返回删除的元素。
+```python
+>>> x = [1, 2, 3]
+>>> x.pop()
+3
+>>> x
+[1, 2]
+>>> x.pop(0)
+1
+>>> x
+[2]
+```
+> `pop`方法是list方法中唯一一个既修改列表又返回值的方法。
+> 利用`pop`和`append`方法可以实现栈操作，而利用`pop`和`insert`方法可以实现队列操作。  
+
+- **remove**  
+
+`remove`方法用来删除第一次出现的值。
+```python
+>>> x = ['to', 'be', 'or', 'not', 'to', 'be']
+>>> x.remove('be')
+>>> x
+['to', 'or', 'not', 'to', 'be']
+>>> x.remove('bee')
+Traceback (innermost last):
+File "<pyshell#3>", line 1, in ?
+x.remove('bee')
+ValueError: list.remove(x): x not in list
+```
+- **reverse**  
+
+`reverse`方法用来反转列表中的元素。
+```python
+>>> x = [1, 2, 3]
+>>> x.reverse()
+>>> x
+[3, 2, 1]
+```
+> 建议：如果你希望对序列进行反向迭代，可以使用`reversed`函数。该函数不返回列表，而是返回一个迭代器。你可以用`list`函数转换返回的对象。
+```python
+>>> x = [1, 2, 3]
+>>> list(reversed(x))
+[3, 2, 1]
+```   
+
+- **sort**  
+
+`sort`方法用来对列表进行排序。
+```python
+>>> x = [4, 6, 2, 1, 7, 9]
+>>> x.sort()
+>>> x
+[1, 2, 4, 6, 7, 9]
+```
+由于`sort`方法修改`x`但不返回值，如果要保留排序后的结果到另一个变量，可以按照如下方法。
+```python
+>>> x = [4, 6, 2, 1, 7, 9]
+>>> y = x[:]
+>>> y.sort()
+>>> x
+[4, 6, 2, 1, 7, 9]
+>>> y
+[1, 2, 4, 6, 7, 9]
+```
+需要指出一点的是`x[:]`分片操作返回列表的一份拷贝，而如果直接将`x`赋值给`y`则指向同一个列表。
+```python
+>>> y = x
+>>> y.sort()
+>>> x
+[1, 2, 4, 6, 7, 9]
+>>> y
+[1, 2, 4, 6, 7, 9]
+```
+另外一种获取列表排序后的拷贝可以使用`sorted`函数。
+```python
+>>> x = [4, 6, 2, 1, 7, 9]
+>>> y = sorted(x)
+>>> x
+[4, 6, 2, 1, 7, 9]
+>>> y
+[1, 2, 4, 6, 7, 9]
+```
+- **高级排序**  
+
