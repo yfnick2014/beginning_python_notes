@@ -129,7 +129,68 @@ Domain name: python
 >>> numbers[::-2]
 [10, 8, 6, 4, 2]
 ```
-- **添加**
-- **乘**
+- **添加**  
+
+相同类型的序列可以用`+`来实现序列的串联
+```python
+>>> [1, 2, 3] + [4, 5, 6]
+[1, 2, 3, 4, 5, 6]
+>>> 'Hello, ' + 'world!'
+'Hello, world!'
+>>> [1, 2, 3] + 'world!'
+Traceback (innermost last):
+File "<pyshell#2>", line 1, in ?
+[1, 2, 3] + 'world!'
+TypeError: can only concatenate list (not "string") to list
+```
+- **乘**  
+
+序列与一个数x相乘，会创建该序列重复x次的新序列。
+```python
+>>> 'python' * 5
+'pythonpythonpythonpythonpython'
+>>> [42] * 10
+[42, 42, 42, 42, 42, 42, 42, 42, 42, 42]
+```
+> `None`为Python中的常量，表示为空。可以利用`None`来初始化固定长度的列表。  
+
+```python
+>>> sequence = [None] * 10
+>>> sequence
+[None, None, None, None, None, None, None, None, None, None]
+```
+**Demo: 在处于中心的盒子中打印句子**  
+
+```python
+# Print a sentence in a centered "box" of correct Width
+
+# Note that the integer division operator (//) only works in Python
+# 2.2 and newer. In earlier versions, simply use plain division (/)
+
+sentence = raw_input("Sentence: ")
+
+screen_width = 80
+text_width = len(sentence)
+box_width = text_width + 6
+left_margin = (screen_width - box_width) // 2
+
+print
+print ' ' * left_margin + '+'   + '-' * (box_width-2) + '+'
+print ' ' * left_margin + '|  ' + ' ' * text_width    + '  |'
+print ' ' * left_margin + '|  ' +       sentence      + '  |'
+print ' ' * left_margin + '|  ' + ' ' * text_width    + '  |'
+print ' ' * left_margin + '+'   + '-' * (box_width-2) + '+'
+print
+```
+运行结果
+```
+Sentence: He's a very naughty boy!
+
+                         +----------------------------+
+                         |                            |
+                         |  He's a very naughty boy!  |
+                         |                            |
+                         +----------------------------+
+```
 - **检查成员**
 - 此外，python还支持内建函数如返回序列长度和查找最大或最小元素。
