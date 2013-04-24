@@ -15,7 +15,7 @@ Say Hello to yourself
 name = raw_input("What is your name? ")
 print "Hello, " + name + "!"
 ```
-保存为hello.py，打开终端执行`python hello.py`
+保存为`hello.py`，打开终端执行`python hello.py`
 > `#`为行注释
 
 `str`和`repr`
