@@ -246,4 +246,56 @@ if [username, pin] in database: print 'Access granted'
 > *注意`list`可以处理所有种类的序列，不仅仅只是字符串。*
 >
 > 转换字符列表为字符串，可以使用下面这个表达式：
-> ''.join(somelist)
+> ''.join(somelist)  
+
+###列表基本操作###
+列表除了可以进行基本的序列操作之外，还可以支持其他操作，比如列表项赋值、删除列表项、分片赋值和列表方法。
+####修改列表：列表项赋值####
+```python
+>>> x = [1, 1, 1]
+>>> x[1] = 2
+>>> x
+[1, 2, 1]
+```
+> 需要注意的是，你不可以给不存在的列表项赋值。  
+
+####删除元素####
+可以使用`del`删除元素
+```python
+>>> names = ['Alice', 'Beth', 'Cecil', 'Dee-Dee', 'Earl']
+>>> del names[2]
+>>> names
+['Alice', 'Beth', 'Dee-Dee', 'Earl']
+```
+####分片赋值####
+分片是一个非常强大的特性，而分片赋值显得更为强大。
+```python
+>>> name = list('Perl')
+>>> name
+['P', 'e', 'r', 'l']
+>>> name[2:] = list('ar')
+>>> name
+['P', 'e', 'a', 'r']
+```
+当然，你也可以使用长度不同的序列来替换分片。
+```python
+>>> name = list('Perl')
+>>> name[1:] = list('ython')
+>>> name
+['P', 'y', 't', 'h', 'o', 'n']
+```
+分片赋值也可以用来插入元素，即不会替换其他原有元素。
+```python
+>>> numbers = [1, 5]
+>>> numbers[1:1] = [2, 3, 4]
+>>> numbers
+[1, 2, 3, 4, 5]
+```
+相反，我们也可以删除分片。
+```python
+>>> numbers
+[1, 2, 3, 4, 5]
+>>> numbers[1:4] = []
+>>> nubmers
+[1, 5]
+```
