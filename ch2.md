@@ -1,5 +1,5 @@
 Lists and Tuples
-===========================
+===
 ---
 Python有6种内建的序列类型。除了本章要讲到的列表(Lists)和元组(Tuples)外，还有字符串、Unicode字符串、缓存对象和xrange对象。  
 
@@ -13,8 +13,8 @@ Python有6种内建的序列类型。除了本章要讲到的列表(Lists)和元
 >>> database
 [['Edward Gumby', 42], ['John Smith', 50]]
 ```
-序列基本操作
------------
+Common Sequence Operations
+---
 ###索引###
 序列中所有的元素从0开始编号，可以用数字索引来访问单个元素，如:  
 ```python
@@ -235,8 +235,8 @@ if [username, pin] in database: print 'Access granted'
 >>> min(9, 3, 2, 5)
 2
 ```
-列表：Python的主力
-------------------
+Lists:Python's Workhorse
+---
 ###`list`函数###
 因为字符串不像列表可以修改，有时可以采用`list`函数从字符串创建一个列表。
 ```python
