@@ -2,8 +2,8 @@ Notes for "Beginning Python"
 ============================
 ---
 * [快速入门:基础篇] [ch1]
-  * [Hello, world!] [ch1-helloworld]
-  * [Say Hello to yourself] [ch1-sayhello]
+  * [从Hello, world!说起] [ch1-helloworld]
+  * [你好!] [ch1-sayhello]
   * [str和repr] [ch1-strrepr]
   * [长字符串，原始字符串和Unicode字符串] [ch1-unicode]
 * [列表和元组] [ch2]
@@ -11,8 +11,8 @@ Notes for "Beginning Python"
   * [列表:Python的主力] [ch2-lists]
 
 [ch1]: ch1.md "快速入门:基础篇"
-  [ch1-helloworld]: ch1.md#hello-world "Hello, world!"
-  [ch1-sayhello]: ch1.md#say-hello-to-yourself "Say Hello to yourself"
+  [ch1-helloworld]: ch1.md#hello-world "从Hello, world!说起"
+  [ch1-sayhello]: ch1.md#say-hello-to-yourself "你好!"
   [ch1-strrepr]: ch1.md#strrepr "str和repr"
   [ch1-unicode]: ch1.md#unicode "长字符串，原始字符串和Unicode字符串"
 [ch2]: ch2.md "列表和元组"
