@@ -481,3 +481,51 @@ ValueError: list.remove(x): x not in list
 >>> x
 [9, 7, 6, 4, 2, 1]
 ```
+Tuples:Immutable Sequences
+===
+元组和列表一样也是序列，不同的是元组是不可修改的。元组的语法很简单，元素之间只需通过`,`分隔。
+```python
+>>> 1, 2, 3
+(1, 2, 3)
+# ecclosed in parentheses
+>>> (1, 2, 3)
+(1, 2, 3)
+# two parentheses contain nothing
+>>> ()
+()
+# a tuple contains a single value
+>>> (42,)
+(42,)
+# which is not a tuple
+>>> 42
+42
+# mutiplying
+>>> 3*(40+2,)
+(42, 42, 42)
+# comma can't be removed
+>>> 3*(40+2)
+126
+```
+###`tuple`函数###
+`tuple`函数和`list`函数类似，给定一个序列参数将其转换为一个新的元组。
+```python
+>>> tuple([1, 2, 3])
+(1, 2, 3)
+>>> tuple('abc')
+('a', 'b', 'c')
+>>> tuple((1, 2, 3))
+(1, 2, 3)
+```
+###元组基本操作###
+元组不是很复杂，你所能做的只是创建元组以及访问元组的元素。
+```python
+>>> x = 1, 2, 3
+>>> x[1]
+2
+>>> x[0:2]
+(1, 2)
+```
+###那为什么要有元组？###
+元组是不可变的，那么我们为何不用列表来取代元组呢？下面有两点需要我们注意。
+* 元组可以作为映射中的键和集合中的元素，而列表不可以。
+* 一些内建的函数和方法会返回元组，意味着你得去处理元组。
