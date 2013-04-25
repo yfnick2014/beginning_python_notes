@@ -9,6 +9,7 @@ Notes for "Beginning Python"
 * [列表和元组] [ch2]
   * [序列基本操作] [ch2-commseq]
   * [列表:Python的主力] [ch2-lists]
+  * [元组:不可变的序列] [ch2-tuple]
 
 [ch1]: ch1.md "快速入门:基础篇"
   [ch1-helloworld]: ch1.md#hello-world "从Hello, world!说起"
@@ -18,4 +19,5 @@ Notes for "Beginning Python"
 [ch2]: ch2.md "列表和元组"
   [ch2-commseq]: ch2.md#common-sequence-operations "序列基本操作"
   [ch2-lists]: ch2.md#listspythons-workhorse "列表:Python的主力"
+  [ch2-tuple]: ch2.md#tuplesimmutable-sequences "元组:不可变的序列"
 
