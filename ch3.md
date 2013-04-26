@@ -22,5 +22,6 @@ String Formatting:The Short Version
 >>> print format % values
 Hello, world. Hot enough for ya?
 ```
-> 注意：如果你使用的是列表或者其他类型的序列，而不是元组，那么序列会被解释成一个单独的值。只有元组和字典允许你格式化多个值。
+> 注意：如果你使用的是列表或者其他类型的序列，而不是元组，那么序列会被解释成一个单独的值。  
+> **只有元组和字典允许你格式化多个值。**
 
