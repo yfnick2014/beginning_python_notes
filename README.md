@@ -11,6 +11,10 @@ Notes for "Beginning Python"
   * [列表:Python的主力] [ch2-lists]
   * [元组:不可变的序列] [ch2-tuple]
 * [字符串] [ch3]
+  * [字符串基本操作] [ch3-basic]
+  * [格式化字符串：简短版] [ch3-shortversion]
+  * [格式化字符串：加长版] [ch3-longversion]
+  * [字符串方法] [ch3-methods]
 
 
 [ch1]: ch1.md "快速入门:基础篇"
@@ -23,3 +27,7 @@ Notes for "Beginning Python"
   [ch2-lists]: ch2.md#listspythons-workhorse "列表:Python的主力"
   [ch2-tuple]: ch2.md#tuplesimmutable-sequences "元组:不可变的序列"
 [ch3]: ch3.md "字符串"
+  [ch3-basic]: ch3.md#basic-string-operations "字符串基本操作"
+  [ch3-shortversion]: ch3.md#string-formattingthe-short-version "格式化字符串：简短版"
+  [ch3-longversion]: ch3.md#string-formattingthe-long-version "格式化字符串：加长版"
+  [ch3-methods]: ch3.md#string-methods "字符串方法"
