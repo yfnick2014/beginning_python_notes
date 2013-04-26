@@ -35,7 +35,7 @@ Hello, world. Hot enough for ya?
 >>> print format % pi
 Pi with three decimals: 3.142
 ```
-###TEMPLATE STRINGS###
+###模板字符串###
 `string`模块提供另外一种格式化值的方式：模板字符串。它很类似UNIX shell中变量替换，`$foo`被替换成名为foo的关键字参数，而参数是通过`substitute`模板方法传递的。
 ```python
 >>> from string import Template
@@ -144,7 +144,7 @@ TypeError: not enough arguments for format string
     <td>字符串（用`str`转换任何Python对象）</td>
   </tr>
 </table>
-###Simple Conversion###
+###简单转换###
 仅包含一个转换类型
 ```python
 >>> 'Price of eggs: $%d' % 42
@@ -161,7 +161,7 @@ TypeError: not enough arguments for format string
 >>> 'Using repr: %r' % 42L
 'Using repr: 42L'
 ```
-###Width and Precision###
+###宽度和精度###
 转换说明符可能包含字段宽度和精度。这两个参数需指定两个整数（先是宽度，后是精度），通过`.`分隔。如果你只想使用精度，`.`也必须包含。
 ```python
 >>> '%10f' % pi    # Field width 10
@@ -173,4 +173,68 @@ TypeError: not enough arguments for format string
 '3.14'
 >>> '%.5s' % 'Guido van Rossum'
 'Guido'
+```
+###符号、对齐和零填充###
+在宽度和精度数字前，你可以放置标记符号，可以是`0`、`+`、`-`或者` `。`0`表示数字将会使用零填充。
+```python
+>>> '%010.2f' % pi
+'0000003.14'
+```
+> 注意这里的`0`和数字`010`前面的`0`是不同的，后者表示八进制。  
+
+`-`表示左对齐。
+```python
+>>> '%-10.2f' % pi
+'3.14
+```
+` `表示空格会放在正数前，可以用来对齐正数和负数。
+```python
+>>> print ('% 5d' % 10) + '\n' + ('% 5d' % -10)
+   10
+  -10
+```
+`+`表示符号会置于正数和负数之前。
+```python
+>>> print ('%+5d' % 10) + '\n' + ('%+5d' % -10)
+  +10
+  -10
+```
+*Demo:格式化字符串*
+```python
+# Print a formatted price list with a given width
+
+width = input('Please enter width: ')
+
+price_width = 10
+item_width = width - price_width
+
+header_format = '%-*s%*s'
+format        = '%-*s%*.2f'
+
+print '=' * width
+
+print header_format % (item_width, 'Item', price_width, 'Price')
+
+print '-' * width
+
+print format % (item_width, 'Apples', price_width, 0.4)
+print format % (item_width, 'Pears', price_width, 0.5)
+print format % (item_width, 'Cantaloupes', price_width, 1.92)
+print format % (item_width, 'Dried Apricots (16 oz.)', price_width, 8)
+print format % (item_width, 'Prunes (4 lbs.)', price_width, 12)
+
+print '=' * width
+```
+运行结果
+```
+Please enter width: 35
+===================================
+Item                          Price
+-----------------------------------
+Apples                         0.40
+Pears                          0.50
+Cantaloupes                    1.92
+Dried Apricots (16 oz.)        8.00
+Prunes (4 lbs.)               12.00
+===================================
 ```
