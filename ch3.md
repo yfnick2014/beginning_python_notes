@@ -65,3 +65,23 @@ Pi with three decimals: 3.142
 'A gentleman must never show his socks.'
 ```
 还有一个方法`safe_substitute`，在出现缺失值或不正确使用`$`字符的情况下，该方法不会提示错误信息。
+String Formatting:The Long Version
+---
+如果右边的操作数是元组，它的每个元素被单独格式化，且每个值都需要转换说明符。
+> 注意：如果元组转换为转换说明符的一部分，元组必须要用括号括起来。
+```python
+>>> '%s plus %s equals %s' % (1, 1, 2)
+'1 plus 1 equals 2'
+>>> '%s plus %s equals %s' % 1, 1, 2 # Lacks parentheses!
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+TypeError: not enough arguments for format string
+```   
+
+一个基本的转换说明符包括：
+- `%`：它标记转换说明符的开始。
+- 转换标记：可选项。`-`表示左对齐，`+`表示符号填充，` `表示正数前空格填充，`0`表示零填充。
+- 最小字符宽度：可选项。指定转换后的字符串长度至少为这么宽。如果为`*`，宽度通过元组值读取。
+- `.`跟上精度：可选项。如果转换的是实数，显示精确到小数点后几位；如果转换的是字符串，精度表示最大字符宽度；如果精度是`*`，那么精度会从元组值读取。
+- 转换类型：可以是列表3-1中的任何类型。
+
