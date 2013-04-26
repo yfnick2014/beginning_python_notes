@@ -26,5 +26,42 @@ Hello, world. Hot enough for ya?
 > **只有元组和字典允许你格式化多个值。**  
 
 `%s`称为转换说明符，它们放在值被插入的位置。`s`表示格式化的值为字符串，如果给定的值不是字符串，会被`str`转换为字符串。
-> 注意：如果需要在格式化字符串中包含`%`，你必须写成`%%`那么Python不会在最开始将`%`解析成为转换说明符
+> 注意：如果需要在格式化字符串中包含`%`，你必须写成`%%`那么Python不会在最开始将`%`解析成为转换说明符  
 
+```python
+# formatting floats
+>>> format = "Pi with three decimals: %.3f"
+>>> from math import pi
+>>> print format % pi
+Pi with three decimals: 3.142
+```
+###TEMPLATE STRINGS###
+`string`模块提供另外一种格式化值的方式：模板字符串。它很类似UNIX shell中变量替换，`$foo`被替换成名为foo的关键字参数，而参数是通过`substitute`模板方法传递的。
+```python
+>>> from string import Template
+>>> s = Template('$x, glorious $x!')
+>>> s.substitute(x='slurm')
+'slurm, glorious slurm!'
+```
+如果匹配字段是单词的一部分，为了明确表示它在哪里结束，名称必须`{}`括起来。
+```python
+>>> s = Template("It's ${x}tastic!")
+>>> s.substitute(x='slurm')
+"It's slurmtastic!"
+```
+为了插入`$`符号，使用`$$`：
+```python
+>>> s = Template("Make $$ selling $x!")
+>>> s.substitute(x='slurm')
+'Make $ selling slurm!'
+```
+除了使用关键字参数，你可以用字典提供键值对：
+```python
+>>> s = Template('A $thing must never $action.')
+>>> d = {}
+>>> d['thing'] = 'gentleman'
+>>> d['action'] = 'show his socks'
+>>> s.substitute(d)
+'A gentleman must never show his socks.'
+```
+还有一个方法`safe_substitute`，在出现缺失值或不正确使用`$`字符的情况下，该方法不会提示错误信息。
