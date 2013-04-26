@@ -238,3 +238,5 @@ Dried Apricots (16 oz.)        8.00
 Prunes (4 lbs.)               12.00
 ===================================
 ```
+String Methods
+---
