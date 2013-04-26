@@ -144,3 +144,33 @@ TypeError: not enough arguments for format string
     <td>字符串（用`str`转换任何Python对象）</td>
   </tr>
 </table>
+###Simple Conversion###
+仅包含一个转换类型
+```python
+>>> 'Price of eggs: $%d' % 42
+'Price of eggs: $42'
+>>> 'Hexadecimal price of eggs: %x' % 42
+'Hexadecimal price of eggs: 2a'
+>>> from math import pi
+>>> 'Pi: %f...' % pi
+'Pi: 3.141593...'
+>>> 'Very inexact estimate of pi: %i' % pi
+'Very inexact estimate of pi: 3'
+>>> 'Using str: %s' % 42L
+'Using str: 42'
+>>> 'Using repr: %r' % 42L
+'Using repr: 42L'
+```
+###Width and Precision###
+转换说明符可能包含字段宽度和精度。这两个参数需指定两个整数（先是宽度，后是精度），通过`.`分隔。如果你只想使用精度，`.`也必须包含。
+```python
+>>> '%10f' % pi    # Field width 10
+'  3.141593'
+>>> '%10.2f' % pi    # Field width 10, precision 2
+'      3.14'
+>>> '%.2f' % pi
+# Precision 2
+'3.14'
+>>> '%.5s' % 'Guido van Rossum'
+'Guido'
+```
