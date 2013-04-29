@@ -301,3 +301,24 @@ TypeError: sequence item 0: expected string, int found
 >>> print 'C:' + '\\'.join(dirs)
 C:\usr\bin\env
 ```
+###lower###
+`lower`方法返回字符串的小写形式：
+```python
+>>> 'Trondheim Hammer Dance'.lower()
+'trondheim hammer dance'
+```
+如果你想编写大小写不敏感的代码（即不区分大小写的代码），这会显得很有用。例如，假设你想检验一个用户名是否在列表内，如果你的列表包含字符串`'gumby'`而用户输入它的名称是`'Gumby'`，那么你无法找到它。
+```python
+>>> if 'Gumby' in ['gumby', 'smith', 'jones']: print 'Found it!'
+...
+>>>
+```
+当然，如果你存储了`'Gumby'`而用户写成了`'gumby'`或者甚至是`'GUMBY'`，会发生相同的结果。解决办法就是在存储和查找时将所有名称转换为小写，那么就有如下的代码。
+```python
+>>> name = 'Gumby'
+>>> names = ['gumby', 'smith', 'jones']
+>>> if name.lower() in names: print 'Found it!'
+...
+Found it!
+>>>
+```
