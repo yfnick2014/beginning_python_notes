@@ -284,7 +284,7 @@ String Methods
 > 注意由起始和终止值指定的范围，包含第一个索引但不包含第二个索引，这在Python是常例。  
 
 ###join###
-字符串中一个非常重要的方法，`join`是`split`的反操作。它用来连接序列的元素。需要指出的是，连接的序列元素必须都是字符串。
+字符串中一个非常重要的方法，`join`是`split`的逆操作。它用来连接序列的元素。需要指出的是，连接的序列元素必须都是字符串。
 ```python
 >>> seq = [1, 2, 3, 4, 5]
 >>> sep = '+'
@@ -332,4 +332,28 @@ Found it!
 >>> import string
 >>> string.capwords("that's all, folks")
 "That's All, Folks"
+```  
+
+###replace###
+`replace`方法用来替换字符串中的子串为另一子串。如果你曾经用过单词处理程序中“查找和替换”的功能，你无疑能了解到这个方法的用处。
+```python
+>>> 'This is a test'.replace('is', 'eez')
+'Theez eez a test'
+```
+###split###
+`split`是`join`方法的逆操作，用来将字符串分割成序列。
+```python
+>>> '1+2+3+4+5'.split('+')
+['1', '2', '3', '4', '5']
+>>> '/usr/bin/env'.split('/')
+['', 'usr', 'bin', 'env']
+>>> 'Using the default'.split()
+['Using', 'the', 'default']
+```
+注意如果没有提供分隔符，默认根据连续的空白字符（空格、制表符、换行符等）来分割。
+###strip###
+`strip`方法返回去除左端和右端空白字符的字符串。‵‵
+```python
+>>> ' internal whitespace is kept '.strip()
+'internal whitespace is kept'
 ```
