@@ -373,3 +373,55 @@ Found it!
 >>> '*** SPAM * for * everyone!!! ***'.strip(' *!')
 'SPAM * for * everyone'
 ```
+###translate###
+`translate`和`replace`的类似之处在于匹配字符串的局部，不同的是`translate`只能处理单个字符。它的强大在于可以同时执行多个替换，而且比`replace`更高效。  
+对于`translate`方法有一些特别技术性的用途（例如转换换行符或者其他依赖平台的特殊字符），但我们先看一个简单的例子————将纯英文文本转换成德国口音。即，你必须要替换字符`c`为`k`，字符`s`为`z`。  
+在使用`translate`前，你必须制作转换表，转换表描述了字符转换的信息。由于这个表有256个输入，你不能自己写出来，而是使用字符串模块的`maketrans`函数。  
+`maketrans`函数有两个参数：两个相同长度的字符串，表示字符串中存在的第一个字符串中的字符，会被第二个字符串中相同位置的字符所替代。代码如下：
+```python
+>>> from string import maketrans
+>>> table = maketrans('cs', 'kz')
+```
+> 转换表存储了对应于ASCII字符集的256个字符的转换字符表。
+```python
+>>> table = maketrans('cs', 'kz')
+>>> len(table)
+256
+>>> table[97:123]
+'abkdefghijklmnopqrztuvwxyz'
+>>> maketrans('', '')[97:123]
+'abcdefghijklmnopqrstuvwxyz'
+```  
+
+一旦你得到了这个转换表，你可以将它作为`translate`方法的参数，用它来转换你的字符串。
+```python
+>>> 'this is an incredible test'.translate(table)
+'thiz iz an inkredible tezt'
+```
+`translate`方法还提供了第二个可选参数，用来指定被删除的字母。比如如果你想模仿说话很快的德国人，你可以删除所有空格。
+```python
+>>> 'this is an incredible test'.translate(table, ' ')
+'thizizaninkredibletezt'
+```
+> ####非英文字符的问题####
+> 有时字符串方法`lower`也解决不了问题，例如正巧你要使用非英文字母表。比如你想将大写挪威单词`BØLLEFRØ`转换为小写形式。
+```python
+>>> print 'BØLLEFRØ'.lower()
+bØllefrØ
+```
+> 显然，这并不好使，因为Python不认为`Ø`是一个字母。在这种情况下，你可以使用`translate`来转换。
+```python
+>>> table = maketrans('ÆØÅ', 'æøå')
+>>> word = 'KÅPESØM'
+>>> print word.lower()
+kÅpesØm
+>>> print word.translate(table)
+KåPESøM
+>>> print word.translate(table).lower()
+kåpesøm
+```
+> 同时，用Unicode也可能解决你的问题。
+```python
+>>> print u'ærnæringslære'.upper()
+ÆRNÆRINGSLÆRE
+```
