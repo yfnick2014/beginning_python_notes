@@ -240,3 +240,64 @@ Prunes (4 lbs.)               12.00
 ```
 String Methods
 ---
+字符串比列表拥有更加丰富的方法，因为字符串“继承”了字符串模块的许多函数。
+> 尽管字符串方法已经完全盖过字符串模块，但是字符串模块仍然包含一些常量和函数是字符串方法所不能提供的。  
+> 以下是字符串中一些常用的常量：  
+> - `string.digits`: 包含0-9数字的字符串
+> - `string.letters`: 包含所有字母（大写和小写）的字符串
+> - `string.lowercase`: 包含所有小写字母的字符串
+> - `string.printable`: 包含所有打印字符的字符串
+> - `string.punctuation`: 包含所有标点符号的字符串
+> - `string.uppercase`: 包含所有大写字母的字符串  
+> 
+> 注意字符串常量字母（例如string.letters）是依赖于语言环境的，如果你想确认你要使用ASCII，你可以使用名称中包含`ascii_`的变种，例如`string.ascii_letters`  
+
+###find###
+`find`方法在字符串中寻找子串，如果子串存在则返回最左边的索引，如果找不到则返回-1
+```python
+>>> 'With a moo-moo here, and a moo-moo there'.find('moo')
+7
+>>> title = "Monty Python's Flying Circus"
+>>> title.find('Monty')
+0
+>>> title.find('Python')
+6
+>>> title.find('Flying')
+15
+>>> title.find('Zirquss')
+-1
+```
+> 注意：字符串方法`find`不会返回布尔值，如果`find`返回0，表示子串存在且在索引0处。  
+
+你还可以为你的查询提供起始点和终止点。
+```python
+>>> subject = '$$$ Get rich now!!! $$$'
+>>> subject.find('$$$')
+0
+>>> subject.find('$$$', 1) # Only supplying the start
+20
+>>> subject.find('!!!')
+16
+>>> subject.find('!!!', 0, 16) # Supplying start and end
+-1
+```
+> 注意由起始和终止值指定的范围，包含第一个索引但不包含第二个索引，这在Python是常例。  
+
+###join###
+字符串中一个非常重要的方法，`join`是`split`的反操作。它用来连接序列的元素。需要指出的是，连接的序列元素必须都是字符串。
+```python
+>>> seq = [1, 2, 3, 4, 5]
+>>> sep = '+'
+>>> sep.join(seq) # Trying to join a list of numbers
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+TypeError: sequence item 0: expected string, int found
+>>> seq = ['1', '2', '3', '4', '5']
+>>> sep.join(seq) # Joining a list of strings
+'1+2+3+4+5'
+>>> dirs = '', 'usr', 'bin', 'env'
+>>> '/'.join(dirs)
+'/usr/bin/env'
+>>> print 'C:' + '\\'.join(dirs)
+C:\usr\bin\env
+```
