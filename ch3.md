@@ -35,7 +35,7 @@ Hello, world. Hot enough for ya?
 >>> print format % pi
 Pi with three decimals: 3.142
 ```
-###模板字符串###
+> ###模板字符串###
 `string`模块提供另外一种格式化值的方式：模板字符串。它很类似UNIX shell中变量替换，`$foo`被替换成名为foo的关键字参数，而参数是通过`substitute`模板方法传递的。
 ```python
 >>> from string import Template
@@ -64,7 +64,8 @@ Pi with three decimals: 3.142
 >>> s.substitute(d)
 'A gentleman must never show his socks.'
 ```
-还有一个方法`safe_substitute`，在出现缺失值或不正确使用`$`字符的情况下，该方法不会提示错误信息。
+还有一个方法`safe_substitute`，在出现缺失值或不正确使用`$`字符的情况下，该方法不会提示错误信息。  
+
 String Formatting:The Long Version
 ---
 如果右边的操作数是元组，它的每个元素被单独格式化，且每个值都需要转换说明符。
@@ -241,6 +242,7 @@ Prunes (4 lbs.)               12.00
 String Methods
 ---
 字符串比列表拥有更加丰富的方法，因为字符串“继承”了字符串模块的许多函数。
+> ####字符串模块并没有死####
 > 尽管字符串方法已经完全盖过字符串模块，但是字符串模块仍然包含一些常量和函数是字符串方法所不能提供的。  
 > 以下是字符串中一些常用的常量：  
 > - `string.digits`: 包含0-9数字的字符串
@@ -322,6 +324,7 @@ C:\usr\bin\env
 Found it!
 >>>
 ```
+> ####标题化字符串####
 > 和`lower`相关的是`title`方法，用来标题化字符串，也就是说，所有单词以大写字母开头，其他字母均为小写。然而，单词边界可能会给出一些不自然的结果。
 ```python
 >>> "that's all folks".title()
@@ -382,6 +385,7 @@ Found it!
 >>> from string import maketrans
 >>> table = maketrans('cs', 'kz')
 ```
+> ####转换表里究竟是什么？####
 > 转换表存储了对应于ASCII字符集的256个字符的转换字符表。
 ```python
 >>> table = maketrans('cs', 'kz')
