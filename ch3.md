@@ -322,3 +322,14 @@ C:\usr\bin\env
 Found it!
 >>>
 ```
+> 和`lower`相关的是`title`方法，用来标题化字符串，也就是说，所有单词以大写字母开头，其他字母均为小写。然而，单词边界可能会给出一些不自然的结果。
+```python
+>>> "that's all folks".title()
+"That'S All, Folks"
+```
+> 另一种方式是采用字符串模块中`capwords`函数。
+```python
+>>> import string
+>>> string.capwords("that's all, folks")
+"That's All, Folks"
+```
