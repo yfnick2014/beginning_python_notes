@@ -15,6 +15,7 @@ Notes for "Beginning Python"
   * [格式化字符串：简短版] [ch3-shortversion]
   * [格式化字符串：加长版] [ch3-longversion]
   * [字符串方法] [ch3-methods]
+* [字典] [ch4]
 
 
 [ch1]: ch1.md "快速入门:基础篇"
@@ -31,3 +32,4 @@ Notes for "Beginning Python"
   [ch3-shortversion]: ch3.md#string-formattingthe-short-version "格式化字符串：简短版"
   [ch3-longversion]: ch3.md#string-formattingthe-long-version "格式化字符串：加长版"
   [ch3-methods]: ch3.md#string-methods "字符串方法"
+[ch4]: ch4.md "字典"
