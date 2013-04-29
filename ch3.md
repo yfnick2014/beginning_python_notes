@@ -357,3 +357,19 @@ Found it!
 >>> ' internal whitespace is kept '.strip()
 'internal whitespace is kept'
 ```
+同`lower`类似，`strip`在比较输入值和存储值时也比较有用。我们回到`lower`部分的用户名例子，如果用户不经意间在名称后多输了一个空格。
+```python
+>>> names = ['gumby', 'smith', 'jones']
+>>> name = 'gumby '
+>>> if name in names: print 'Found it!'
+...
+>>> if name.strip() in names: print 'Found it!'
+...
+Found it!
+>>>
+```
+你还可以指定被除去的字符，通过在字符串参数中列出它们。
+```python
+>>> '*** SPAM * for * everyone!!! ***'.strip(' *!')
+'SPAM * for * everyone'
+```
