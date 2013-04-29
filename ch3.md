@@ -352,7 +352,7 @@ Found it!
 ```
 注意如果没有提供分隔符，默认根据连续的空白字符（空格、制表符、换行符等）来分割。
 ###strip###
-`strip`方法返回去除左端和右端空白字符的字符串。‵‵
+`strip`方法返回除去左端和右端空白字符的字符串。
 ```python
 >>> ' internal whitespace is kept '.strip()
 'internal whitespace is kept'
