@@ -262,3 +262,14 @@ Name: Gumby
 Phone number (p) or address (a)? batting average
 Gumby's batting average is not available.
 ```
+###has_key###
+`has_key`方法检查字典是否存在给定的键。表达式`d.has_key(k)`和`k in d`同等，选择哪种表达式完全属于个人品味的问题，尽管`has_key`在Python3.0就不存在了。
+```python
+>>> d = {}
+>>> d.has_key('name')
+False
+>>> d['name'] = 'Eric'
+>>> d.has_key('name')
+True
+```
+###items and iteritems###
