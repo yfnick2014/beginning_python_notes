@@ -100,3 +100,27 @@ Beth's phone number is 9102.
 ```
 String Formatting with Dictionaries
 ---
+字典的格式化字符串也很容易，在`%`后加上用`()`包含的键即可：
+```python
+>>> phonebook 
+{'Beth': '9102', 'Alice': '2341', 'Cecil': '3258'} 
+>>> "Cecil's phone number is %(Cecil)s." % phonebook 
+"Cecil's phone number is 3258."
+```
+发现这种格式化字符串在模板系统里会相当有用（例如在使用HTML时）：
+```python
+>>> template = '''<html> 
+    <head><title>%(title)s</title></head> 
+    <body> 
+    <h1>%(title)s</h1> 
+    <p>%(text)s</p> 
+    </body>''' 
+>>> data = {'title': 'My Home Page', 'text': 'Welcome to my home page!'} 
+>>> print template % data 
+<html> 
+<head><title>My Home Page</title></head> 
+<body> 
+<h1>My Home Page</h1> 
+<p>Welcome to my home page!</p> 
+</body> 
+```
