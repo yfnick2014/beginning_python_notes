@@ -206,3 +206,59 @@ None
 >>> dict.fromkeys(['name', 'age'], '(unknown)')
 {'age': '(unknown)', 'name': '(unknown)'}
 ```
+###get###
+`get`方法是一种访问字典项目的方法。平时当你访问字典中不存在的元素时，会产生错误：
+```python
+>>> d = {}
+>>> print d['name']
+Traceback (most recent call last):
+   File "<stdin>", line 1, in ?
+KeyError: 'name'
+>>> print d.get('name')
+None
+```
+正如你所看到的，当你用`get`访问不存在的键时并没有报异常，相反你会得到返回值`None`。你还可以提供你的默认值来替换`None`：
+```python
+>>> d.get('name', 'N/A')
+'N/A'
+```
+当键存在时，`get`和其他字典查询一样：
+```python
+>>> d['name'] = 'Eric'
+>>> d.get('name')
+'Eric'
+```
+*Demo：使用`get`方法替代先前的例子*
+```
+# A simple database using get()
+
+# Insert database (people) from Listing 4-1 here.
+
+labels = {
+   'phone': 'phone number',
+   'addr': 'address'
+}
+
+name = raw_input('Name: ')
+
+# Are we looking for a phone number or an address?
+request = raw_input('Phone number (p) or address (a)? ')
+
+# Use the correct key:
+key = request # In case the request is neither 'p' nor 'a'
+if request == 'p': key = 'phone'
+if request == 'a': key = 'addr'
+
+# Use get to provide default values:
+person = people.get(name, {})
+label = labels.get(key, key)
+result = person.get(key, 'not available')
+
+print "%s's %s is %s." % (name, label, result)
+```
+运行结果
+```
+Name: Gumby
+Phone number (p) or address (a)? batting average
+Gumby's batting average is not available.
+```
