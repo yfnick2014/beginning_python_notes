@@ -263,7 +263,7 @@ Phone number (p) or address (a)? batting average
 Gumby's batting average is not available.
 ```
 ###has_key###
-`has_key`方法检查字典是否存在给定的键。表达式`d.has_key(k)`和`k in d`同等，选择哪种表达式完全属于个人品味的问题，尽管`has_key`在Python3.0就不存在了。
+`has_key`方法检查字典是否存在给定的键。表达式`d.has_key(k)`和`k in d`同等，选择哪种表达方式完全看个人品味，尽管`has_key`在Python3.0就不存在了。
 ```python
 >>> d = {}
 >>> d.has_key('name')
@@ -273,3 +273,75 @@ False
 True
 ```
 ###items and iteritems###
+`item`方法返回字典中键值对项目列表，且项目的顺序是任意的。
+```python
+>>> d = {'title': 'Python Web Site', 'url': 'http://www.python.org', 'spam': 0}
+>>> d.items()
+[('url', 'http://www.python.org'), ('spam', 0), ('title', 'Python Web Site')]
+```
+`iteritems`方法跟`item`方法类似，只不过返回的是迭代器而不是列表，而且使用`iteritems`在大多数情况下要更高效。
+```python
+>>> it = d.iteritems()
+>>> it
+<dictionary-iterator object at 169050>
+>>> list(it) # Convert the iterator to a list
+[('url', 'http://www.python.org'), ('spam', 0), ('title', 'Python Web Site')]
+```
+###keys and iterkeys###
+`keys`方法返回字典中键的列表，而`iterkeys`返回键的迭代器。
+###pop###
+`pop`方法可以根据一个给定的键获取值，同时从字典删除该键值对。
+```python
+>>> d = {'x': 1, 'y': 2}
+>>> d.pop('x')
+1
+>>> d
+{'y': 2}
+```
+###popitem###
+`popitem`方法同`list.pop`方法（弹出列表最后一个元素）类似。不同之处在于`popitem`弹出的项目是任意的，因为字典没有所谓的最后一个元素。如果你想以一种有效的方式依次删除和处理项目，可以使用`popitem`方法，不需要先遍历键的列表。
+```python
+>>> d
+{'url': 'http://www.python.org', 'spam': 0, 'title': 'Python Web Site'}
+>>> d.popitem()
+('url', 'http://www.python.org')
+>>> d
+{'spam': 0, 'title': 'Python Web Site'}
+```
+尽管`popitem`同列表`pop`方法类似，但是在字典中没有等价于列表的`append`方法（在列表末尾添加元素）。因为字典并没有顺序，这样的方法没有任何意义。
+###setdefault###
+`setdefault`方法在某种程度上而言和`get`相似，都是通过给定的键查找值。除了`get`的功能外，`setdefault`方法在字典中没有给定的键时设置对应的值。
+```python
+>>> d = {}
+>>> d.setdefault('name', 'N/A')
+'N/A'
+>>> d
+{'name': 'N/A'}
+>>> d['name'] = 'Gumby'
+>>> d.setdefault('name', 'N/A')
+'Gumby'
+>>> d
+{'name': 'Gumby'}
+```
+正如你所看到的，当键不存在时，`setdefault`返回默认值并更新字典；如果键存在则返回它的值而并不修改字典。默认是可选的，同`get`一样，当没有给定时默认为`None`。
+```python
+>>> d = {}
+>>> print d.setdefault('name')
+None
+>>> d
+{'name': None}
+```
+###update###
+`update`方法使用另一个字典中的项目来更新字典。
+```python
+>>> d = {
+       'title': 'Python Web Site',
+       'url': 'http://www.python.org',
+       'changed': 'Mar 14 22:09:15 MET 2008'
+   }
+>>> x = {'title': 'Python Language Website'}
+>>> d.update(x)
+>>> d
+{'url': 'http://www.python.org', 'changed':
+'Mar 14 22:09:15 MET 2008', 'title': 'Python Language Website'}
+```
