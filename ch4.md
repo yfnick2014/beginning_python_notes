@@ -49,7 +49,7 @@ IndexError: list assignment index out of range
 >>> x
 {42: 'Foobar'}
 ```
-*Demo：使用字典*
+*Listing 4-1：使用字典*
 ```python
 # A simple database
 
@@ -228,7 +228,7 @@ None
 >>> d.get('name')
 'Eric'
 ```
-*Demo：使用`get`方法替代先前的例子*
+*Listing 4-2：使用`get`方法替代例子4-1*
 ```
 # A simple database using get()
 
