@@ -200,7 +200,7 @@ TypeError: not enough arguments for format string
   +10
   -10
 ```
-*Demo:格式化字符串*
+*Listing 3-1:格式化字符串*
 ```python
 # Print a formatted price list with a given width
 
