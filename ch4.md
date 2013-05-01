@@ -124,3 +124,44 @@ String Formatting with Dictionaries
 <p>Welcome to my home page!</p> 
 </body> 
 ```
+Dictionary Methods
+---
+###clear###
+`clear`方法从字典中删除所有项目，这是一种原地操作（像`list.sort`），因此它没有返回值（或者说`None`）。
+```python
+>>> d = {} 
+>>> d['name'] = 'Gumby' 
+>>> d['age'] = 42 
+>>> d 
+{'age': 42, 'name': 'Gumby'}
+>>> returned_value = d.clear() 
+>>> d 
+{} 
+>>> print returned_value 
+None 
+```
+这有什么用呢？我们来看两种情况，下面是第一种：
+```python
+>>> x = {} 
+>>> y = x 
+>>> x['key'] = 'value' 
+>>> y 
+{'key': 'value'} 
+>>> x = {} 
+>>> y 
+{'key': 'value'}
+```
+下面是第二种情况：
+```python
+>>> x = {} 
+>>> y = x 
+>>> x['key'] = 'value' 
+>>> y 
+{'key': 'value'} 
+>>> x.clear() 
+>>> y 
+{} 
+```
+在这两种情况下，`x`和`y`开始都指向同一个字典。在第一种情况下，`x`变为空是通过赋值为新的空字典，这并不影响`y`指向先前的字典；
+如果你期望的是删除先前字典的所有元素，那么你必须使用`clear`方法，在第二种情况下`y`也成了空字典。
+###copy###
