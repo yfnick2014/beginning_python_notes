@@ -27,7 +27,7 @@ Python也可以用负数索引来访问元素.从序列中最右侧的元素开�
 >>> greeting[-1]
 'o'
 ```
-*Demo: 一个利用索引打印日期的例子*
+*Listing 2-1: 一个利用索引打印日期的例子*
 ```python
 # Print out a date, given year, month, and day as numbers
 
@@ -99,7 +99,7 @@ August 16th, 1974
 >>> numbers[:]
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
-*Demo: 利用分片从URL中提取域名*
+*Listing 2-2: 利用分片从URL中提取域名*
 ```python
 # Split up a URL of the form http://www.something.com
 
@@ -155,7 +155,7 @@ TypeError: can only concatenate list (not "string") to list
 >>> sequence
 [None, None, None, None, None, None, None, None, None, None]
 ```
-*Demo: 在处于中心的盒子中打印句子*  
+*Listing 2-3: 在处于中心的盒子中打印句子*  
 
 ```python
 # Print a sentence in a centered "box" of correct Width
@@ -204,7 +204,7 @@ True
 >>> '$$$' in subject
 True
 ```
-*Demo: 检查用户名和PIN码*
+*Listing 2-4: 检查用户名和PIN码*
 ```python
 # Check a user name and PIN code
 
