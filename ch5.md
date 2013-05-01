@@ -15,6 +15,8 @@ Age: 42
 >>> 1, 2, 3
 >>> print 1, 2, 3
 1 2 3
+>>> print (1, 2, 3)
+(1, 2, 3)
 ```  
 
 如果你想连接文本和变量的值而不用格式化字符串，这种方式会显得非常有用：
@@ -26,4 +28,4 @@ Age: 42
 Hello, Mr. Gumby
 ```
 ###Importing Something As Something Else###
-
+通常当你从模块导入时，可以使用`import somemodule`或`from somemodule import somefunction`或`from somemodule import somefunction, anotherfunction, yetanotherfunction`或`from somemodule import *`
