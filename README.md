@@ -20,6 +20,7 @@ Notes for "Beginning Python"
   * [字典基本操作] [ch4-basicopt]
   * [字典的格式化字符串] [ch4-stringformat]
   * [字典方法] [ch4-dictmethod]
+* [条件式、循环和其他表达式] [ch5]
 
 
 [ch1]: ch1.md "快速入门:基础篇"
@@ -41,3 +42,4 @@ Notes for "Beginning Python"
   [ch4-basicopt]: ch4.md#basic-dictionary-operations "字典基本操作"
   [ch4-stringformat]: ch4.md#string-formatting-with-dictionaries "字典的格式化字符串"
   [ch4-dictmethod]: ch4.md#dictionary-methods "字典方法"
+[ch5]: ch5.md "条件式、循环和其他表达式"
