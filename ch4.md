@@ -165,3 +165,28 @@ None
 在这两种情况下，`x`和`y`开始都指向同一个字典。在第一种情况下，`x`变为空是通过赋值为新的空字典，这并不影响`y`指向先前的字典；
 如果你期望的是删除先前字典的所有元素，那么你必须使用`clear`方法，在第二种情况下`y`也成了空字典。
 ###copy###
+`copy`方法返回一个有相同键值对的新字典（浅拷贝，因为值本身是相同的，而不是拷贝）：
+```python
+>>> x = {'username': 'admin', 'machines': ['foo', 'bar', 'baz']} 
+>>> y = x.copy() 
+>>> y['username'] = 'mlh' 
+>>> y['machines'].remove('bar') 
+>>> y 
+{'username': 'mlh', 'machines': ['foo', 'baz']} 
+>>> x 
+{'username': 'admin', 'machines': ['foo', 'baz']}
+```
+可以发现，当你替换拷贝中的值时，原来的并不变化。然而，如果你修改一个值（就地而不是替换它），原来的也发生变化，因为相同的值存储在这里。  
+避免这个问题的一种方式是使用深拷贝，拷贝任何包含的值，通过使用`copy`模块里的`deepcopy`函数。
+```python
+>>> from copy import deepcopy 
+>>> d = {} 
+>>> d['names'] = ['Alfred', 'Bertrand'] 
+>>> c = d.copy() 
+>>> dc = deepcopy(d) 
+>>> d['names'].append('Clive') 
+>>> c 
+{'names': ['Alfred', 'Bertrand', 'Clive']} 
+>>> dc 
+{'names': ['Alfred', 'Bertrand']} 
+```
