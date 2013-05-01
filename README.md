@@ -17,6 +17,9 @@ Notes for "Beginning Python"
   * [字符串方法] [ch3-methods]
 * [字典] [ch4]
   * [创建和使用字典] [ch4-createuse]
+  * [字典基本操作] [ch4-basicopt]
+  * [字典的格式化字符串] [ch4-stringformat]
+  * [字典方法] [ch4-dictmethod]
 
 
 [ch1]: ch1.md "快速入门:基础篇"
@@ -35,3 +38,6 @@ Notes for "Beginning Python"
   [ch3-methods]: ch3.md#string-methods "字符串方法"
 [ch4]: ch4.md "字典"
   [ch4-createuse]: ch4.md#creating-and-using-dictionaries "创建和使用字典"
+  [ch4-basicopt]: ch4.md#basic-dictionary-operations "字典基本操作"
+  [ch4-stringformat]: ch4.md#string-formatting-with-dictionaries "字典的格式化字符串"
+  [ch4-dictmethod]: ch4.md#dictionary-methods "字典方法"
