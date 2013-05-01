@@ -345,3 +345,14 @@ None
 {'url': 'http://www.python.org', 'changed':
 'Mar 14 22:09:15 MET 2008', 'title': 'Python Language Website'}
 ```
+###values and itervalues###
+`values`方法返回字典里值的列表，而`itervalues`返回的是值的迭代器。与`keys`不同的是，`values`返回的列表可能包含有重复。
+```python
+>>> d = {} 
+>>> d[1] = 1 
+>>> d[2] = 2 
+>>> d[3] = 3 
+>>> d[4] = 1 
+>>> d.values() 
+[1, 2, 3, 1] 
+```
