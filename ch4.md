@@ -176,8 +176,8 @@ None
 >>> x 
 {'username': 'admin', 'machines': ['foo', 'baz']}
 ```
-可以发现，当你替换拷贝中的值时，原来的并不变化。然而，如果你修改一个值（就地而不是替换它），原来的也发生变化，因为相同的值存储在这里。  
-避免这个问题的一种方式是使用深拷贝，拷贝任何包含的值，通过使用`copy`模块里的`deepcopy`函数。
+可以发现，当你替换拷贝中的值时，原来的并不变化。然而，如果你修改一个值（就地而不是替换它），原来的也发生变化，因为相同的值存储在这里。
+避免这个问题的一种方式就是使用深拷贝，拷贝任何包含的值，通过使用`copy`模块里的`deepcopy`函数。
 ```python
 >>> from copy import deepcopy 
 >>> d = {} 
@@ -189,4 +189,20 @@ None
 {'names': ['Alfred', 'Bertrand', 'Clive']} 
 >>> dc 
 {'names': ['Alfred', 'Bertrand']} 
+```
+###fromkeys###
+`fromkeys`方法创建给定键的新字典，默认值均为`None`。
+```python
+>>> {}.fromkeys(['name', 'age'])
+{'age': None, 'name': None}
+```
+这个例子先创建一个空字典，接着调用`fromkeys`方法创建另一个字典，有点多余的方式。反而你可以直接在`dict`（所有字典的类型）上调用方法。
+```python
+>>> dict.fromkeys(['name', 'age'])
+{'age': None, 'name': None}
+```
+如果你不想使用`None`为默认值，你可以提供你的默认值：
+```python
+>>> dict.fromkeys(['name', 'age'], '(unknown)')
+{'age': '(unknown)', 'name': '(unknown)'}
 ```
