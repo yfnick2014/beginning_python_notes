@@ -272,7 +272,7 @@ False
 >>> d.has_key('name')
 True
 ```
-###items and iteritems###
+###`items`和`iteritems`###
 `item`方法返回字典中键值对项目列表，且项目的顺序是任意的。
 ```python
 >>> d = {'title': 'Python Web Site', 'url': 'http://www.python.org', 'spam': 0}
@@ -287,7 +287,7 @@ True
 >>> list(it) # Convert the iterator to a list
 [('url', 'http://www.python.org'), ('spam', 0), ('title', 'Python Web Site')]
 ```
-###keys and iterkeys###
+###`keys`和`iterkeys`###
 `keys`方法返回字典中键的列表，而`iterkeys`返回键的迭代器。
 ###pop###
 `pop`方法可以根据一个给定的键获取值，同时从字典删除该键值对。
@@ -345,7 +345,7 @@ None
 {'url': 'http://www.python.org', 'changed':
 'Mar 14 22:09:15 MET 2008', 'title': 'Python Language Website'}
 ```
-###values and itervalues###
+###`values`和`itervalues`###
 `values`方法返回字典里值的列表，而`itervalues`返回的是值的迭代器。与`keys`不同的是，`values`返回的列表可能包含有重复。
 ```python
 >>> d = {} 
