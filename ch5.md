@@ -57,3 +57,24 @@ from module1 import open as open2
 Assignment Magic
 ---
 ###Sequence Unpacking###
+你可以同时为多个变量赋值：
+```python
+>>> x, y, z = 1, 2, 3
+>>> print x, y, z
+1 2 3
+```
+听起来没有什么用吗？好吧，这样你可以同时交换多个变量的值：
+```python
+>>> x, y = y, x
+>>> print x, y, z
+2 1 3
+```
+实际上，这里我在做的叫做序列拆封，一个序列可以拆封成多个变量。
+```python
+>>> values = 1, 2, 3
+>>> values
+(1, 2, 3)
+>>> x, y, z = values
+>>> x
+1
+```
