@@ -8,7 +8,7 @@ Creating and Using Dictionaries
 字典由键值对组成。在上面这个例子中，名称为键，电话号码为值。每个键值对中键和值用`:`分隔，键值对之间用`,`隔开，所有键值对用`{}`括起来，空的字典写成`{}`。
 > 字典中键是唯一的，而值可以不唯一。  
 
-###The dict Function###
+###`dict`函数###
 可以使用`dict`函数从其他映射或序列的`(key, value)`对来构造字典。
 ```python
 >>> items = [('name', 'Gumby'), ('age', 42)]
