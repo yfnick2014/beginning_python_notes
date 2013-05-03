@@ -36,3 +36,24 @@ Hello, Mr. Gumby
 `from somemodule import somefunction, anotherfunction, yetanotherfunction`  
 或  
 `from somemodule import *`
+以上第四种只有在你确信需要导入模块里所有内容时才使用。
+但如果你有两个模块，每个模块均包含一个函数名为`open`，你可以使用上面第一种格式导入模块，然后按如下的方式使用函数：
+```python
+module1.open(...)
+module2.open(...)
+```
+但还有另外一种方式，你可以在后面加上`as`从句，指定使用的函数名甚至是模块名：
+```python
+>>> import math as foobar
+>>> foobar.sqrt(4)
+2.0
+>>> from math import sqrt as foobar
+>>> foobar(4)
+2.0
+# For the open functions, you might use the following
+from module1 import open as open1
+from module1 import open as open2
+```
+Assignment Magic
+---
+###Sequence Unpacking###
