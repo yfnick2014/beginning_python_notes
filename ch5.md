@@ -132,3 +132,16 @@ y = somefunction()
 ```
 Blocks: The Joy of Indentation
 ---
+代码块是一组语句，当条件为真时执行（条件语句），或执行多次（循环语句）等。通过缩进一部分代码或者在前面填入空格，可以形成代码块。
+> 注意，你也可以使用制表符来缩进你的代码块。标准的方式是建议使用空格，而不是制表符，尤其是在每层缩进使用4个空格。  
+
+代码块的每行必须使用相同数量的空格缩进，以下用伪代码来表示如何缩进：
+```
+this is a line
+this is another line:
+    this is another block
+    continuing the same block
+    the last line of this block
+phew, there we escaped the inner block
+```
+在许多编程语言中
