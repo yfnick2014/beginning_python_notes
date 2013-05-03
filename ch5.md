@@ -144,4 +144,9 @@ this is another line:
     the last line of this block
 phew, there we escaped the inner block
 ```
-在许多编程语言中
+在许多编程语言中，通常会使用一个特殊的词或字符（比如，`{`用来开始一块代码，`}`用来结束这块代码）来表示代码块。
+而在Python中，使用`:`来表示代码块开始，接着代码块中的每行代码都要缩进，当回到相同数量的缩进时表示代码块已经结束。
+Conditions and Conditional Statements
+---
+###So That's What Those Boolean Values Are For###
+
