@@ -21,6 +21,8 @@ Notes for "Beginning Python"
   * [字典的格式化字符串] [ch4-stringformat]
   * [字典方法] [ch4-dictmethod]
 * [条件式、循环和其他表达式] [ch5]
+  * [更多关于print和import] [ch5-printimport]
+  * [赋值魔力] [ch5-assignmagic]
 
 
 [ch1]: ch1.md "快速入门:基础篇"
@@ -43,3 +45,5 @@ Notes for "Beginning Python"
   [ch4-stringformat]: ch4.md#string-formatting-with-dictionaries "字典的格式化字符串"
   [ch4-dictmethod]: ch4.md#dictionary-methods "字典方法"
 [ch5]: ch5.md "条件式、循环和其他表达式"
+  [ch5-printimport]: ch5.md#more-about-print-and-import "更多关于print和import"
+  [ch5-assignmagic]: ch5.md#assignment-magic "赋值魔力"
