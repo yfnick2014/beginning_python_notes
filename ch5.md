@@ -69,7 +69,7 @@ Assignment Magic
 >>> print x, y, z
 2 1 3
 ```
-实际上，这里我在做的叫做序列拆封，一个序列可以拆封成多个变量。
+实际上，这里我在做的叫做序列拆封（或迭代器拆封），一个序列(或任意迭代器对象)可以拆封成多个变量。
 ```python
 >>> values = 1, 2, 3
 >>> values
@@ -78,3 +78,30 @@ Assignment Magic
 >>> x
 1
 ```
+当函数或方法返回元组（或其他序列或迭代器对象）时它会相当有用。
+比如当你想从字典中搜索（和删除）一个任意的键值对，你可以使用`popitem`方法以元组的形式返回键值对，那么你就可以将返回的元组直接拆封成两个变量：
+```python
+>>> scoundrel = {'name': 'Robin', 'girlfriend': 'Marion'}
+>>> key, value = scoundrel.popitem()
+>>> key
+'girlfriend'
+>>> value
+'Marion'
+```
+这样可以允许函数以元组封装的形式返回多个值，同时可以通过简单的赋值来访问返回的值。
+拆封的序列必须含有列在`=`左边变量个数相同的元素，否则在赋值时Python会发生异常。
+```python
+>>> x, y, z = 1, 2
+Traceback (most recent call last):
+   File "<stdin>", line 1, in <module>
+ValueError: need more than 2 values to unpack
+>>> x, y, z = 1, 2, 3, 4
+Traceback (most recent call last):
+   File "<stdin>", line 1, in <module>
+ValueError: too many values to unpack
+```
+> Python3.0有另一个拆封的特点：你可以使用`*`操作符。  
+> 例如，`a, b, rest* = [1, 2, 3, 4]`在赋值给`a`和`b`后将剩余的值赋值给`rest`。
+> 在这个例子中，`rest`将会成为`[3, 4]`  
+
+###Chained Assignments###
