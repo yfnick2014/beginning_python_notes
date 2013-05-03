@@ -3,7 +3,7 @@ Conditionals, Loops, and Some Other Statements
 ---
 More About print and import
 ---
-###Printing with Commas###
+###用逗号打印###
 实际上你可以打印多条表达式，只需使用逗号分隔开：
 ```python
 >>> print 'Age:', 42
@@ -27,7 +27,7 @@ Age: 42
 >>> print greeting, salutation, name
 Hello, Mr. Gumby
 ```
-###Importing Something As Something Else###
+###以其他名称导入###
 通常当你从模块导入时，可以使用  
 `import somemodule`  
 或  
@@ -56,7 +56,7 @@ from module1 import open as open2
 ```
 Assignment Magic
 ---
-###Sequence Unpacking###
+###序列拆封###
 你可以同时为多个变量赋值：
 ```python
 >>> x, y, z = 1, 2, 3
@@ -104,7 +104,7 @@ ValueError: too many values to unpack
 > 例如，`a, b, rest* = [1, 2, 3, 4]`在赋值给`a`和`b`后将剩余的值赋值给`rest`。
 > 在这个例子中，`rest`将会成为`[3, 4]`  
 
-###Chained Assignments###
+###链赋值###
 当你希望绑定多个变量到同一个值时，可以直接使用链赋值。
 ```python
 x = y = somefunction()
@@ -115,7 +115,7 @@ x = y
 x = somefunction()
 y = somefunction()
 ```
-###Augmented Assignments###
+###增强赋值###
 ```python
 >>> x = 2
 >>> x += 1
@@ -148,7 +148,7 @@ phew, there we escaped the inner block
 而在Python中，使用`:`来表示代码块开始，接着代码块中的每行代码都要缩进，当回到相同数量的缩进时表示代码块已经结束。
 Conditions and Conditional Statements
 ---
-###So That's What Those Boolean Values Are For###
+###布尔值的意义###
 当被看成为布尔表达式时，以下的值均被解释器认为是假的值：  
 `False    None    0    ""    ()    []    {}`  
 换句话说，标准值`False`和`None`、所有的数值0（包括浮点、长整型等）、空的序列（例如空字符串、元组和列表）和空字典都被认为是假。其他所有的都被解释为真，包含特殊值`True`。  
@@ -178,13 +178,13 @@ False
 >>> bool(0)
 False
 ```
-###Conditional Execution and the if Statement###
+###条件表达式和if语句###
 ```python
 name = raw_input('What is your name? ')
 if name.endswith('Gumby'):
     print 'Hello, Mr. Gumby'
 ```
-###else Clauses###
+###else语句###
 ```python
 name = raw_input('What is your name? ')
 if name.endswith('Gumby'):
@@ -192,7 +192,7 @@ if name.endswith('Gumby'):
 else:
     print 'Hello, Stranger'
 ```
-###elif Clauses###
+###elif语句###
 ```python
 num = input('Enter a number: ')
 if num > 0:
@@ -202,7 +202,7 @@ elif num < 0:
 else:
     print 'The number is zero'
 ```
-###Nesting Blocks###
+###嵌套块###
 ```python
 name = raw_input('What is your name? ')
 if name.endswith('Gumby'):
@@ -215,3 +215,4 @@ if name.endswith('Gumby'):
 else:
     print 'Hello, Stranger'
 ```
+###更多复杂条件###
