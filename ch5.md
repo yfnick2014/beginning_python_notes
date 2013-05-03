@@ -264,7 +264,7 @@ else:
       <td>x不是容器y的成员</td>
    </tr>
 </table>
-**等于操作符**
+####等于操作符####
 ```python
 >>> "foo" == "foo"
 True
@@ -273,7 +273,7 @@ False
 >>> "foo" = "foo"
 SyntaxError: can't assign to literal
 ```
-**`is`:身份操作符**
+####`is`:身份操作符####
 ```python
 >>> x = y = [1, 2, 3]
 >>> z = [1, 2, 3]
@@ -301,7 +301,7 @@ True
 >>> x is y
 False
 ```
-**`in`:成员操作符**
+####`in`:成员操作符####
 ```python
 name = raw_input('What is your name? ')
 if 's' in name:
@@ -309,7 +309,7 @@ if 's' in name:
 else:
     print 'Your name does not contain the letter "s".'
 ```
-**比较字符串和序列**
+####比较字符串和序列####
 字符串之间按照字母顺序依次比较：
 ```python
 >>> "alpha" < "beta"
