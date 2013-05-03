@@ -216,3 +216,51 @@ else:
     print 'Hello, Stranger'
 ```
 ###更多复杂条件###
+####比较操作符####
+*Table 5-1. Python比较操作符*
+<table>
+   <tr>
+      <th>表达式</th>
+      <th>描述</th>
+   </tr>
+   <tr>
+      <td>x == y</td>
+      <td>x等于y</td>
+   </tr>
+   <tr>
+      <td>x < y</td>
+      <td>x小于y</td>
+   </tr>
+   <tr>
+      <td>x > y</td>
+      <td>x大于y</td>
+   </tr>
+   <tr>
+      <td>x >= y</td>
+      <td>x大于或等于y</td>
+   </tr>
+   <tr>
+      <td>x <= y</td>
+      <td>x小于或等于y</td>
+   </tr>
+   <tr>
+      <td>x != y</td>
+      <td>x不等于y</td>
+   </tr>
+   <tr>
+      <td>x is y</td>
+      <td>x和y是相同对象</td>
+   </tr>
+   <tr>
+      <td>x is not y</td>
+      <td>x和y是不同对象</td>
+   </tr>
+   <tr>
+      <td>x in y</td>
+      <td>x是容器y的成员</td>
+   </tr>
+   <tr>
+      <td>x not in y</td>
+      <td>x不是容器y的成员</td>
+   </tr>
+</table>
