@@ -149,4 +149,69 @@ phew, there we escaped the inner block
 Conditions and Conditional Statements
 ---
 ###So That's What Those Boolean Values Are For###
-
+当被看成为布尔表达式时，以下的值均被解释器认为是假的值：  
+`False    None    0    ""    ()    []    {}`  
+换句话说，标准值`False`和`None`、所有的数值0（包括浮点、长整型等）、空的序列（例如空字符串、元组和列表）和空字典都被认为是假。其他所有的都被解释为真，包含特殊值`True`。  
+这就意味着Python中所有值都可以被解释成为真值，当然标准真值是`True`和`False`。
+在一些编程语言中（例如C和Python2.3以前），标准真值为`0`（表示假）和`1`（表示真）。
+实际上来说，`True`和`False`并没有那么大差别，它们只是`0`和`1`的华丽替身。如果你看到逻辑表达式返回`1`或`0`，你要知道这表示的是`True`还是`False`。
+```python
+>>> True
+True
+>>> False
+False
+>>> True == 1
+True
+>>> False == 0
+True
+>>> True + False + 42
+43
+```
+布尔值`True`和`False`属于`bool`类型，可以用来（就像`list`、`str`和`tuple`）转换其他值：
+```python
+>>> bool('I think, therefore I am')
+True
+>>> bool(42)
+True
+>>> bool('')
+False
+>>> bool(0)
+False
+```
+###Conditional Execution and the if Statement###
+```python
+name = raw_input('What is your name? ')
+if name.endswith('Gumby'):
+    print 'Hello, Mr. Gumby'
+```
+###else Clauses###
+```python
+name = raw_input('What is your name? ')
+if name.endswith('Gumby'):
+    print 'Hello, Mr. Gumby'
+else:
+    print 'Hello, Stranger'
+```
+###elif Clauses###
+```python
+num = input('Enter a number: ')
+if num > 0:
+    print 'The number is positive'
+elif num < 0:
+    print 'The number is negative'
+else:
+    print 'The number is zero'
+```
+###Nesting Blocks###
+```python
+name = raw_input('What is your name? ')
+if name.endswith('Gumby'):
+    if name.startswith('Mr.):
+        print 'Hello, Mr. Gumby'
+    elif name.startswith('Mrs.'):
+        print 'Hello, Mrs. Gumby'
+    else:
+        print 'Hello, Gumby'
+else:
+    print 'Hello, Stranger'
+```
