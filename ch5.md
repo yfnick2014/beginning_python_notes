@@ -105,3 +105,30 @@ ValueError: too many values to unpack
 > 在这个例子中，`rest`将会成为`[3, 4]`  
 
 ###Chained Assignments###
+当你希望绑定多个变量到同一个值时，可以直接使用链赋值。
+```python
+x = y = somefunction()
+# which is same as
+y = somefunction()
+x = y
+# note that the preceding statements may not be the same as
+x = somefunction()
+y = somefunction()
+```
+###Augmented Assignments###
+```python
+>>> x = 2
+>>> x += 1
+>>> x *= 2
+>>> x
+6
+
+# it also works with other data types
+>>> fnord = 'foo'
+>>> fnord += 'bar'
+>>> fnord *= 2
+>>> fnord
+'foobarfoobar'
+```
+Blocks: The Joy of Indentation
+---
