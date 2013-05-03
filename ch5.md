@@ -264,3 +264,54 @@ else:
       <td>x不是容器y的成员</td>
    </tr>
 </table>
+**等于操作符**
+```python
+>>> "foo" == "foo"
+True
+>>> "foo" == "bar"
+False
+>>> "foo" = "foo"
+SyntaxError: can't assign to literal
+```
+**`is`:身份操作符**
+```python
+>>> x = y = [1, 2, 3]
+>>> z = [1, 2, 3]
+>>> x == y
+True
+>>> x == z
+True
+>>> x is y
+True
+>>> x is z
+False
+```
+为什么`x is not z`？尽管它们是相等的，为什么？因为`is`测试的是两者是否相同，而不是是否相等。
+变量`x`和`y`绑定到相同的列表，而`z`绑定到了另外一个列表，且正好这个列表的值和前一个列表的值相等。它们可能相等，但是它们不是同一个对象。
+```python
+>>> x = [1, 2, 3]
+>>> y = [2, 4]
+>>> x is not y
+True
+>>> del x[2]
+>>> y[1] = 1
+>>> y.reverse()
+>>> x == y
+True
+>>> x is y
+False
+```
+**`in`:成员操作符**
+```python
+name = raw_input('What is your name? ')
+if 's' in name:
+    print 'Your name contains the letter "s".'
+else:
+    print 'Your name does not contain the letter "s".'
+```
+**比较字符串和序列**
+字符串之间按照字母顺序依次比较：
+```python
+>>> "alpha" < "beta"
+True
+```
