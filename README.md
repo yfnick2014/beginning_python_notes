@@ -23,6 +23,8 @@ Notes for "Beginning Python"
 * [条件式、循环和其他表达式] [ch5]
   * [更多关于print和import] [ch5-printimport]
   * [赋值魔力] [ch5-assignmagic]
+  * [块：缩进的乐趣] [ch5-block]
+  * [条件和条件表达式] [ch5-condition]
 
 
 [ch1]: ch1.md "快速入门:基础篇"
@@ -47,3 +49,5 @@ Notes for "Beginning Python"
 [ch5]: ch5.md "条件式、循环和其他表达式"
   [ch5-printimport]: ch5.md#more-about-print-and-import "更多关于print和import"
   [ch5-assignmagic]: ch5.md#assignment-magic "赋值魔力"
+  [ch5-block]: ch5.md#blocks-the-joy-of-indentation "块：缩进的乐趣"
+  [ch5-condition]: ch5.md#conditions-and-conditional-statements "条件和条件表达式"
