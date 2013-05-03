@@ -178,13 +178,13 @@ False
 >>> bool(0)
 False
 ```
-###条件表达式和if语句###
+###条件表达式和`if`语句###
 ```python
 name = raw_input('What is your name? ')
 if name.endswith('Gumby'):
     print 'Hello, Mr. Gumby'
 ```
-###else语句###
+###`else`语句###
 ```python
 name = raw_input('What is your name? ')
 if name.endswith('Gumby'):
@@ -192,7 +192,7 @@ if name.endswith('Gumby'):
 else:
     print 'Hello, Stranger'
 ```
-###elif语句###
+###`elif`语句###
 ```python
 num = input('Enter a number: ')
 if num > 0:
