@@ -310,8 +310,17 @@ else:
     print 'Your name does not contain the letter "s".'
 ```
 **比较字符串和序列**  
-字符串之间按照字母顺序依次比较：
 ```python
+# strings are compared according to their order when sorted alphabetically
 >>> "alpha" < "beta"
+True
+# ignore the difference between uppercase and lowercase letters
+>>> 'FnOrD'.lower() == 'Fnord'.lower()
+True
+# other sequences are compared in the same manner
+>>> [1, 2] < [2, 1]
+True
+# the sequences contain other sequences as elements
+>>> [2, [1, 4]] < [2, [1, 5]]
 True
 ```
