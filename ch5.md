@@ -339,3 +339,27 @@ else:
 if ((cash > price) or customer_has_good_credit) and not out_of_stock:
     give_goods()
 ```
+###断言###
+在Python中断言和`if`语句很类似，通常断言有点类似这样（伪代码）：
+```
+if not condition:
+    crash program
+```
+那么为什么需要断言？因为当错误条件发生时使程序崩溃要比之后崩溃要好。
+你需要保证某些条件为真，这样可以接下来做下一件事情。  
+断言的关键字为`assert`，如果你要保证某些事情必须为真才能继续，可以将`assert`语句作为程序的检查点：
+```python
+>>> age = 10
+>>> assert 0 < age < 100
+>>> age = -1
+>>> assert 0 < age < 100
+Traceback (most recent call last):
+   File "<stdin>", line 1, in ?
+AssertionError
+# a string may be added after the condition, to explain the assertion
+>>> age = -1 
+>>> assert 0 < age < 100, 'The age must be realistic' 
+Traceback (most recent call last): 
+   File "<stdin>", line 1, in ? 
+AssertionError: The age must be realistic 
+```
