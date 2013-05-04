@@ -25,6 +25,7 @@ Notes for "Beginning Python"
   * [赋值魔力] [ch5-assignmagic]
   * [块：缩进的乐趣] [ch5-block]
   * [条件和条件表达式] [ch5-condition]
+  * [循环] [ch5-loops]
 
 
 [ch1]: ch1.md "快速入门:基础篇"
@@ -51,3 +52,4 @@ Notes for "Beginning Python"
   [ch5-assignmagic]: ch5.md#assignment-magic "赋值魔力"
   [ch5-block]: ch5.md#blocks-the-joy-of-indentation "块：缩进的乐趣"
   [ch5-condition]: ch5.md#conditions-and-conditional-statements "条件和条件表达式"
+  [ch5-loops]: ch5.md#loops "循环"
