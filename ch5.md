@@ -365,3 +365,32 @@ AssertionError: The age must be realistic
 ```
 Loops
 ---
+###`while`循环###
+```python
+# print from 1 to 100(inclusive)
+x = 1
+while x <= 100:
+    print x
+    x += 1
+```
+###`for`循环###
+```python
+# iterate a list
+words = ['this', 'is', 'an', 'ex', 'parrot']
+for word in words:
+    print word
+# another example
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+for number in numbers:
+    print number
+```
+Python内建的`range`函数可以方便遍历一个数字范围：
+```python
+>>> range(0, 10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> range(10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# the following program writes out the numbers from 1 to 100
+for number in range(1, 101):
+    print number
+```
