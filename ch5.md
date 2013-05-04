@@ -324,3 +324,18 @@ True
 >>> [2, [1, 4]] < [2, [1, 5]]
 True
 ```
+**布尔操作符**
+```python
+# reads a number and checks whether it's between 1 and 10(inclusive)
+number = input('Enter a number between 1 and 10: ')
+if number <= 10 and number >=1 :
+    print 'Great!'
+else:
+    print 'Wrong!'
+```
+`and`操作符就是所谓的布尔操作符，它需要两个真值，如果均为真则返回真，否则返回假。还有另外两个布尔操作符`or`和`not`。
+```python
+# you can combine truth values in any way you like
+if ((cash > price) or customer_has_good_credit) and not out_of_stock:
+    give_goods()
+```
