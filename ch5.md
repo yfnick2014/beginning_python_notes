@@ -394,3 +394,43 @@ Python内建的`range`函数可以方便遍历一个数字范围：
 for number in range(1, 101):
     print number
 ```
+###遍历字典###
+```python
+d = {'x': 1, 'y': 2, 'z': 3}
+for key in d:
+    print key, 'corresponds to', d[key]
+```
+如果你关心的只有字典的值，那么你可以用`d.values`来替代`d.keys`。你可能还记得`d.items`返回键值对元组，利用这一特点你可以使用序列拆封：
+```python
+for key, value in d.items():
+    print key, 'corresponds to', value
+```
+###一些迭代组件###
+Python有一些函数可以用来遍历序列或其他迭代的对象，其中一些在`itertools`模块中提供，但也有一些内建函数可以派上用场。
+####并行迭代####
+有时候你希望同时遍历两个序列，例如你希望遍历以下两个列表：
+```python
+names = ['anne', 'beth', 'george', 'damon']
+ages = [12, 45, 32, 102]
+```
+如果你想打印姓名和对应的年龄，你可以如下操作：
+```python
+for i in range(len(names)):
+    print names[i], 'is', ages[i], 'years old'
+```
+上面的例子中`i`作为循环指数，除了这种方法外还有一种内建的函数`zip`可以使用，它用来将序列压缩到一起，返回元组的列表：
+```python
+>>> zip(names, ages)
+[('anne', 12), ('beth', 45), ('george', 32), ('damon', 102)]
+```
+那么接下来可以在循环中拆封元组：
+```python
+for name, age in zip(names, ages):
+    print name, 'is', age, 'years old'
+```
+`zip`在处理不同长度序列时会以最短序列为基准：
+```python
+>>> zip(range(5), xrange(100000000))
+[(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]
+```
+####编号迭代####
