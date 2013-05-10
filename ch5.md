@@ -434,3 +434,64 @@ for name, age in zip(names, ages):
 [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]
 ```
 ####编号迭代####
+在一些情况下，你需要在遍历对象序列的同时访问当前访问对象的索引。例如，你可能需要替换字符串列表中所有包含`xxx`子串的字符串：
+```python
+for string in strings:
+    if 'xxx' in string:
+        index = strings.index(string) # Search for the string in the list of strings
+        strings[index] = '[censored]'
+
+# maybe a better version
+index = 0
+for string in strings:
+    if 'xxx' in string:
+        strings[index] = '[censored]'
+    index += 1
+
+# use the build-in function enumerate
+for index, string in enumerate(strings):
+    if 'xxx' in string:
+        strings[index] = '[censored]'
+```
+####逆向遍历和排序遍历####
+我们来看另外一组有用的函数：`reversed`和`sorted`，它们同列表方法`reverse`和`sort`类似，但它们可用于任何序列和迭代对象，还有一点是它们返回逆向和排序后的结果而不是直接修改对象：
+```python
+>>> sorted([4, 3, 6, 8, 3]) 
+[3, 3, 4, 6, 8] 
+>>> sorted('Hello, world!') 
+[' ', '!', ',', 'H', 'd', 'e', 'l', 'l', 'l', 'o', 'o', 'r', 'w'] 
+>>> list(reversed('Hello, world!')) 
+['!', 'd', 'l', 'r', 'o', 'w', ' ', ',', 'o', 'l', 'l', 'e', 'H'] 
+>>> ''.join(reversed('Hello, world!')) 
+'!dlrow ,olleH'
+```
+###跳出循环###
+####break####
+```python
+from math import sqrt 
+for n in range(99, 0, -1): 
+     root = sqrt(n) 
+     if root == int(root): 
+          print n 
+          break
+```
+####continue####
+```python
+for x in seq: 
+     if condition1: continue 
+     if condition2: continue 
+     if condition3: continue 
+
+     do_something() 
+     do_something_else() 
+     do_another_thing() 
+     etc() 
+
+# In many cases, however, simply using an if statement is just as good
+for x in seq: 
+     if not (condition1 or condition2 or condition3): 
+          do_something() 
+          do_something_else() 
+          do_another_thing() 
+          etc()
+```
